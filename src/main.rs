@@ -1,7 +1,10 @@
 use bevy::prelude::*;
 
+use falling_sand::FallingSand;
+
 fn main() {
-    App::new()
-        .add_plugins(DefaultPlugins) //
-        .run();
+    match App::new().add_plugins(FallingSand).run() {
+        AppExit::Success => info!("good bye"),
+        AppExit::Error(n) => error!("exited with error code: {n}"),
+    }
 }
