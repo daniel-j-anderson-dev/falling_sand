@@ -1,5 +1,7 @@
 use bevy::prelude::*;
 
+pub mod game_of_life;
+
 pub struct FallingSand;
 impl Plugin for FallingSand {
     fn build(&self, app: &mut App) {
@@ -16,7 +18,7 @@ impl Plugin for FallingSand {
 }
 
 fn setup(mut commands: Commands) {
-    commands.spawn(Camera2d::default());
+    commands.spawn(Camera2d);
     info!("setup complete");
 }
 
